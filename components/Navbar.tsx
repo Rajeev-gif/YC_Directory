@@ -43,7 +43,7 @@ const Navbar = async () => {
               }}
               className=""
             >
-              <button type="submit" className="">
+              <button type="submit" className="cursor-pointer">
                 Login
               </button>
             </form>
