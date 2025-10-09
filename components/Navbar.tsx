@@ -1,7 +1,9 @@
 import { auth, signOut, signIn } from "@/auth";
+import { CircleUserRound, CopyPlus, LogOut } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { Avatar, AvatarImage } from "./ui/avatar";
 
 const Navbar = async () => {
   const session = await auth();
@@ -15,8 +17,9 @@ const Navbar = async () => {
         <div className="flex items-center gap-5 text-black">
           {session && session?.user ? (
             <>
-              <Link href="/startup/create">
-                <span className="">Create</span>
+              <Link href="/startup/create" className="flex gap-2">
+                <span className="max-sm:hidden">Create</span>
+                <CopyPlus className="size-5 text-fuchsia-500 inline" />
               </Link>
 
               <form
@@ -26,13 +29,24 @@ const Navbar = async () => {
                 }}
                 className=""
               >
-                <button type="submit" className="cursor-pointer">
-                  Logout
+                <button type="submit" className="cursor-pointer flex gap-2">
+                  <span className="max-sm:hidden">Logout</span>
+                  <LogOut className="size-5 text-red-500 inline" />
                 </button>
               </form>
 
               <Link href={`/user/${session?.id}`}>
-                <span className="">{session?.user?.name}</span>
+                {session?.user?.image ? (
+                  <Avatar className="size-10 ">
+                    <AvatarImage
+                      src={session?.user?.image}
+                      alt="pfp"
+                      className=""
+                    />
+                  </Avatar>
+                ) : (
+                  <CircleUserRound className="size-6 text-blue-500 inline" />
+                )}
               </Link>
             </>
           ) : (
