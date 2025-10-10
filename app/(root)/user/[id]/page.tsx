@@ -28,7 +28,9 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           <img
             src={user.image}
             alt="pfp"
-            className="w-[220px] h-[220px] profile_image"
+            width={220}
+            height={220}
+            className="profile_image"
           />
 
           <p className="text-30-extrabold mt-7 text-center">

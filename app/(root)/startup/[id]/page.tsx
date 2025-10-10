@@ -62,7 +62,9 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
               <img
                 src={post.author.image}
                 alt="author"
-                className="w-[64px] h-[64px] rounded-full drop-shadow-lg object-cover hover:shadow-gray-500 transition"
+                width={64}
+                height={64}
+                className="rounded-full drop-shadow-lg object-cover hover:shadow-gray-500 transition"
               />
 
               <div>

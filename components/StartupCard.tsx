@@ -36,7 +36,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
             <h3 className="text-26-semibold line-clamp-1">{title}</h3>
           </Link>
         </div>
-        <Link href={`/users/${authorId}`}>
+        <Link href={`/user/${authorId}`}>
           <img
             src={author?.image}
             className="rounded-full object-cover"
