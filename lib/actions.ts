@@ -4,9 +4,10 @@ import { auth } from "@/auth";
 import { parseServerActionResponse } from "./utils";
 import slugify from "slugify";
 import { writeClient } from "@/sanity/lib/write-client";
+import type { StartupFormState } from "@/components/StartupForm"; // or define it here
 
 export const createPitch = async (
-  state: any,
+  state: StartupFormState,
   form: FormData,
   pitch: string,
 ) => {

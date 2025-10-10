@@ -11,7 +11,7 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { createPitch } from "@/lib/actions";
 
-type StartupFormState = {
+export type StartupFormState = {
   error: string;
   status: "INITIAL" | "SUCCESS" | "ERROR" | "Error";
   _id?: string;
